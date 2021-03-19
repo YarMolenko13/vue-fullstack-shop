@@ -1,0 +1,8 @@
+export default {
+    GET_PRODUCTS_FROM_STATE(state) {
+        return state.products
+    },
+    GET_REVIEWS_FROM_STATE(state) {
+        return state.reviews
+    }
+}
