@@ -85,7 +85,7 @@
 </template>
 
 <script>
-import axios from "axios";
+import { HTTP } from "../../../http-common"
 import { mapActions, mapGetters } from 'vuex'
 
 import vReview from './v-review'
@@ -127,7 +127,7 @@ export default {
     sendReview() {
       this.formValidMessage = formValidate(this.userName, this.rating, this.reviewText)
       if (this.formValidMessage === '') {
-        axios.post('api/add-review', {
+        HTTP.post('api/watch-reviews/add', {
           itemId: this.product_data.id,
           userName: this.userName,
           rating: this.rating,

@@ -1,8 +1,8 @@
-import axios from "axios";
+import { HTTP } from "../../../http-common";
 
 export default {
     GET_ITEMS_FROM_DB({commit}) {
-        return axios('/api/get-all-items')
+        return HTTP.get('/api/watch-items/get')
             .then((product) => {
                 commit('SET_ITEMS_TO_STATE', product.data)
             })
@@ -12,7 +12,7 @@ export default {
             })
     },
     GET_ITEM_REVIEWS({commit}, itemId) {
-        return axios.get('api/get-need-reviews?itemId=' + itemId)
+        return HTTP.get('api/watch-reviews/get?itemId=' + itemId)
             .then((reviews) => {
             commit('SET_REVIEWS_TO_STATE', reviews.data)
         })
