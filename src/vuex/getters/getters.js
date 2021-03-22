@@ -4,5 +4,8 @@ export default {
     },
     GET_REVIEWS_FROM_STATE(state) {
         return state.reviews
+    },
+    GET_CART_ITEMS_FROM_STATE(state) {
+        return state.cart
     }
 }

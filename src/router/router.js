@@ -20,6 +20,12 @@ let router = new Router({
             name: 'watches',
             meta: {title: 'Timpus | watches'},
             component: () => import ('./../components/watches/v-watches')
+        },
+        {
+            path: '/cart',
+            name: 'cart',
+            meta: {title: 'Timpus | cart'},
+            component: () => import('./../components/cart/v-cart')
         }
     ],
     scrollBehavior (to, from, savedPosition) {

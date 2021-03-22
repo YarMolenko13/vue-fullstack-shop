@@ -1,4 +1,4 @@
-<template>
+  <template>
   <div class="v-popup" ref="v-popup">
     <div class="v-popup__body">
       <div class="v-popup__header">
@@ -87,6 +87,7 @@
 <script>
 import { HTTP } from "../../../http-common"
 import { mapActions, mapGetters } from 'vuex'
+import dbOpenDBRequest from "../../main";
 
 import vReview from './v-review'
 

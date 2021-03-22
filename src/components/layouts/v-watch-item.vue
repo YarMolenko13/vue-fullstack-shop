@@ -17,6 +17,7 @@
             <div class="content-popup__title">{{ product_data.title }}</div>
             <div class="content-popup__price">${{ product_data.price }}</div>
             <button
+                @click="addToCart(product_data.id)"
                 class="v-popup__submit"
             >Add to cart</button>
           </div>
@@ -47,6 +48,9 @@
 
 <script>
 import vPopup from './v-popup'
+// import dbOpenDBRequest from "../../main";
+
+import { mapActions, mapGetters } from 'vuex'
 
 export default {
   name: "v-watch-item",
@@ -84,6 +88,9 @@ export default {
     console.log(this.isFeatured)
   },
   methods: {
+    ...mapActions([
+        'ADD_TO_CART'
+    ]),
     showInfoPopup() {
       this.isInfoPopupVisible = true
       document.body.classList.add('_lock')
@@ -92,12 +99,21 @@ export default {
     closeInfoPopup() {
       this.isInfoPopupVisible = false
       document.body.classList.remove('_lock')
+    },
+    addToCart(itemID) {
+      this.ADD_TO_CART(itemID)
+
     }
   }
 }
 </script>
 
 <style lang="scss">
+button {
+  &:focus {
+    outline: none;
+  }
+}
 .box {
   cursor: pointer;
   transition: all .3s ease 0s;

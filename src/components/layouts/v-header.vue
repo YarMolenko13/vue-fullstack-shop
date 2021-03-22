@@ -3,11 +3,11 @@
     <header class="header_section">
       <div class="container-fluid">
         <nav class="navbar navbar-expand-lg custom_nav-container ">
-          <a class="navbar-brand" href="index.html">
+          <router-link class="navbar-brand" to="/">
             <span>
               Timups
             </span>
-          </a>
+          </router-link>
 
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class=""> </span>
@@ -21,20 +21,11 @@
               <li class="nav-item">
                 <router-link to="/watches" class="nav-link"> Watches </router-link>
               </li>
-              <li class="nav-item">
-                <router-link to="/about" class="nav-link"> About </router-link>
-              </li>
-              <li class="nav-item">
-                <router-link to="/contact" class="nav-link"> Contact Us </router-link>
-              </li>
             </ul>
             <div class="user_option-box">
-              <a href="">
+              <router-link to="/cart">
                 <i class="fa fa-cart-plus" aria-hidden="true"></i>
-              </a>
-              <a href="">
-                <i class="fa fa-search" aria-hidden="true"></i>
-              </a>
+              </router-link>
             </div>
           </div>
         </nav>
@@ -49,6 +40,9 @@ export default {
 }
 </script>
 
-<style scoped>
-
+<style lang="scss">
+  .v-header {
+    background: #fff;
+    z-index: 10 !important;
+  }
 </style>
